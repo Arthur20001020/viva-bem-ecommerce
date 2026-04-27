@@ -1,0 +1,1654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Viva Bem - Bem-estar e saúde preventiva para mulheres 30+">
+  <meta name="keywords" content="bem-estar, saúde, suplementos naturais, skincare">
+  <meta property="og:title" content="Viva Bem - Cuide de você, do seu jeito">
+  <meta property="og:description" content="Produtos naturais de bem-estar e saúde preventiva">
+  
+  <title>Viva Bem - Cuide de você, do seu jeito</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo">✨ Viva Bem</a>
+    
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="loja.html">Loja</a>
+      <a href="clube.html">Clube</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+
+    <div class="header-icons">
+      <div class="search-box">
+        <input type="text" placeholder="Buscar produtos..." id="search-input">
+        <span>🔍</span>
+      </div>
+      <button class="icon-btn" onclick="toggleDarkMode()" title="Modo escuro">🌙</button>
+      <button class="icon-btn" onclick="toggleCart()" title="Carrinho">
+        🛒
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Cuide de você, do seu jeito</h1>
+    <p>Bem-estar integral com produtos naturais, dermocosméticos e suplementação para mulheres 30+</p>
+    <a href="quiz.html" class="btn btn-primary">Fazer o Quiz de Saúde</a>
+  </div>
+</section>
+
+<!-- CATEGORIAS -->
+<section class="container">
+  <h2>Categorias</h2>
+  <div class="categories-grid">
+    <div class="category-card" onclick="window.location.href='loja.html?cat=suplementos'">
+      <div class="category-icon">💊</div>
+      <h3>Suplementos</h3>
+    </div>
+    <div class="category-card" onclick="window.location.href='loja.html?cat=skincare'">
+      <div class="category-icon">✨</div>
+      <h3>Skincare</h3>
+    </div>
+    <div class="category-card" onclick="window.location.href='loja.html?cat=bem-estar'">
+      <div class="category-icon">🧘‍♀️</div>
+      <h3>Bem-Estar</h3>
+    </div>
+    <div class="category-card" onclick="window.location.href='loja.html?cat=saude-mental'">
+      <div class="category-icon">🌿</div>
+      <h3>Saúde Mental</h3>
+    </div>
+  </div>
+</section>
+
+<!-- KITS TEMÁTICOS -->
+<section class="container" style="background: var(--color-light);">
+  <h2>Kits Temáticos em Destaque</h2>
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-image">
+        <div style="font-size: 4rem;">⚡</div>
+        <span class="product-tag">Kit Completo</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Kit Energia</div>
+        <div class="product-name">Kit Energia & Disposição</div>
+        <div class="product-description">Vitaminas B12, Ferro e Magnésio para potencializar sua energia diária</div>
+        <div class="product-rating">
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span style="color: #999;">(348)</span>
+        </div>
+        <div class="product-footer">
+          <div>
+            <span class="product-price-original">R$ 189,00</span>
+            <div class="product-price">R$ 149,90</div>
+          </div>
+          <button class="btn btn-primary btn-small" onclick="addToCart({id: 1, name: 'Kit Energia & Disposição', price: 149.90, image: '⚡'})">Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <div style="font-size: 4rem;">💄</div>
+        <span class="product-tag">Mais Vendido</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Kit Beleza</div>
+        <div class="product-name">Kit Beleza Premium</div>
+        <div class="product-description">Colágeno Verisol, Vitamina C pura e Niacinamida para pele impecável</div>
+        <div class="product-rating">
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span style="color: #999;">(512)</span>
+        </div>
+        <div class="product-footer">
+          <div>
+            <span class="product-price-original">R$ 259,00</span>
+            <div class="product-price">R$ 209,90</div>
+          </div>
+          <button class="btn btn-primary btn-small" onclick="addToCart({id: 2, name: 'Kit Beleza Premium', price: 209.90, image: '💄'})">Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="product-image">
+        <div style="font-size: 4rem;">😴</div>
+        <span class="product-tag">Novo</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Kit Sono</div>
+        <div class="product-name">Kit Sono Perfeito</div>
+        <div class="product-description">Melatonina, Magnésio e Valeriana para noites restauradoras</div>
+        <div class="product-rating">
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star">⭐</span>
+          <span class="star" style="color: #ddd;">⭐</span>
+          <span style="color: #999;">(87)</span>
+        </div>
+        <div class="product-footer">
+          <div>
+            <span class="product-price-original">R$ 179,00</span>
+            <div class="product-price">R$ 139,90</div>
+          </div>
+          <button class="btn btn-primary btn-small" onclick="addToCart({id: 3, name: 'Kit Sono Perfeito', price: 139.90, image: '😴'})">Adicionar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="container testimonials">
+  <h2>O Que Dizem Nossas Clientes</h2>
+  <div class="testimonials-slider" id="testimonials-slider">
+    <div class="testimonial-card">
+      <div class="product-rating">
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+      </div>
+      <div class="testimonial-text">"Descobri a Viva Bem buscando melhorar minha pele aos 42 anos. Com o Kit Beleza, minha pele ficou radiante em 3 meses! Recomendo demais!"</div>
+      <div class="testimonial-author">— Mariana L., 42 anos</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="product-rating">
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+      </div>
+      <div class="testimonial-text">"A assinatura mensal me salva! Já vem o que preciso para minha rotina de bem-estar. Qualidade garantida e preço justo."</div>
+      <div class="testimonial-author">— Juliana P., 38 anos</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="product-rating">
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+      </div>
+      <div class="testimonial-text">"Comecei com o Quiz e fiquei impressionada como foi preciso! As recomendações foram exatamente o que eu precisava. Meu sono melhorou muito!"</div>
+      <div class="testimonial-author">— Fernanda R., 45 anos</div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="product-rating">
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+      </div>
+      <div class="testimonial-text">"Sou assinante há 6 meses! Adoro receber meus produtos personalizados. A empresa se preocupa realmente com a gente."</div>
+      <div class="testimonial-author">— Beatriz M., 35 anos</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLUBE DE ASSINATURA -->
+<section class="container" style="background: rgba(107, 153, 118, 0.05);">
+  <h2>Clube de Assinatura Viva Bem</h2>
+  <p style="text-align: center; margin-bottom: var(--spacing-lg); color: #666;">Receba produtos personalizados todo mês com descontos exclusivos</p>
+  
+  <div class="products-grid" style="margin-bottom: var(--spacing-xl);">
+    <div style="background: white; padding: var(--spacing-lg); border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Plano Mensal</h3>
+      <div style="font-size: 2rem; color: var(--color-primary); margin-bottom: var(--spacing-sm); font-weight: bold;">R$ 99,90</div>
+      <p style="color: #999; margin-bottom: var(--spacing-md);">economize 20%</p>
+      <ul style="text-align: left; margin-bottom: var(--spacing-lg); color: #666;">
+        <li>✓ 1 produto personalizado</li>
+        <li>✓ Desconto 20% em tudo</li>
+        <li>✓ Frete grátis</li>
+        <li>✓ Suporte prioritário</li>
+      </ul>
+      <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='clube.html'">Assinar Agora</button>
+    </div>
+
+    <div style="background: var(--color-primary); color: white; padding: var(--spacing-lg); border-radius: 10px; box-shadow: 0 4px 12px rgba(107, 153, 118, 0.3); transform: scale(1.05);">
+      <span style="background: var(--color-secondary); color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.85rem; font-weight: bold;">MAIS POPULAR</span>
+      <h3 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-md);">Plano Trimestral</h3>
+      <div style="font-size: 2rem; margin-bottom: var(--spacing-sm); font-weight: bold;">R$ 279,90</div>
+      <p style="opacity: 0.9; margin-bottom: var(--spacing-md);">economize 25%</p>
+      <ul style="text-align: left; margin-bottom: var(--spacing-lg);">
+        <li>✓ 3 produtos personalizados</li>
+        <li>✓ Desconto 25% em tudo</li>
+        <li>✓ Frete grátis</li>
+        <li>✓ Brinde exclusivo</li>
+        <li>✓ Suporte VIP</li>
+      </ul>
+      <button class="btn btn-secondary" style="width: 100%;" onclick="window.location.href='clube.html'">Assinar Agora</button>
+    </div>
+
+    <div style="background: white; padding: var(--spacing-lg); border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Plano Semestral</h3>
+      <div style="font-size: 2rem; color: var(--color-primary); margin-bottom: var(--spacing-sm); font-weight: bold;">R$ 519,90</div>
+      <p style="color: #999; margin-bottom: var(--spacing-md);">economize 30%</p>
+      <ul style="text-align: left; margin-bottom: var(--spacing-lg); color: #666;">
+        <li>✓ 6 produtos personalizados</li>
+        <li>✓ Desconto 30% em tudo</li>
+        <li>✓ Frete grátis</li>
+        <li>✓ 2 brindes exclusivos</li>
+        <li>✓ Suporte VIP + consultoria</li>
+      </ul>
+      <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='clube.html'">Assinar Agora</button>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="container" style="background: var(--color-light); text-align: center;">
+  <h2>Receba Dicas de Bem-Estar</h2>
+  <p style="color: #666; margin-bottom: var(--spacing-lg);">Conteúdo exclusivo sobre saúde hormonal, skincare e rotinas de autocuidado</p>
+  
+  <div style="max-width: 400px; margin: 0 auto;">
+    <div class="newsletter-form">
+      <input type="email" placeholder="Seu e-mail..." id="newsletter-email">
+      <button onclick="subscribeNewsletter()">Inscrever</button>
+    </div>
+    <p style="font-size: 0.85rem; color: #999;">✓ Sem spam, apenas conteúdo de valor</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sobre Viva Bem</h4>
+      <p>Transformamos a vida de mulheres 30+ com produtos naturais e conhecimento sobre bem-estar integral.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Compre</h4>
+      <a href="loja.html">Loja</a>
+      <a href="loja.html?cat=suplementos">Suplementos</a>
+      <a href="loja.html?cat=skincare">Skincare</a>
+      <a href="clube.html">Clube de Assinatura</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Conteúdo</h4>
+      <a href="blog.html">Blog</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contato</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Siga-nos</h4>
+      <div class="social-links">
+        <a href="#" title="Instagram">f</a>
+        <a href="#" title="Facebook">📘</a>
+        <a href="#" title="Pinterest">📌</a>
+        <a href="#" title="TikTok">🎵</a>
+      </div>
+      <h4 style="margin-top: var(--spacing-lg);">Newsletter</h4>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Seu e-mail..." style="margin-bottom: 0;">
+        <button onclick="subscribeNewsletter()">→</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Viva Bem. Todos os direitos reservados. | <a href="#" style="color: inherit;">Política de Privacidade</a> | <a href="#" style="color: inherit;">Termos de Uso</a></p>
+  </div>
+</footer>
+
+<!-- CARRINHO DRAWER -->
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3>Seu Carrinho</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cart-total">R$ 0,00</span>
+    </div>
+    <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='carrinho.html'">Ver Carrinho</button>
+    <button class="btn btn-secondary" style="width: 100%;" onclick="goToCheckout()">Finalizar Compra</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/carrinho.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Saúde - Viva Bem</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo">✨ Viva Bem</a>
+    
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="loja.html">Loja</a>
+      <a href="clube.html">Clube</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+
+    <div class="header-icons">
+      <button class="icon-btn" onclick="toggleDarkMode()" title="Modo escuro">🌙</button>
+      <button class="icon-btn" onclick="toggleCart()" title="Carrinho">
+        🛒
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Seu Quiz de Saúde</h1>
+    <p>Descubra os produtos ideais para seu bem-estar em 5 minutos</p>
+  </div>
+</section>
+
+<!-- QUIZ CONTAINER -->
+<section class="container" style="padding: 60px var(--spacing-md);">
+  <div class="quiz-container">
+    <h2 style="font-size: 1.5rem; margin-bottom: var(--spacing-lg); text-align: center;">Vamos começar? 🌟</h2>
+    
+    <div id="quiz-content"></div>
+    
+    <div class="quiz-buttons" id="quiz-buttons" style="display: none;">
+      <button class="btn btn-outline" onclick="previousQuestion()">Voltar</button>
+      <button class="btn btn-primary" onclick="nextQuestion()" id="next-btn">Próximo</button>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTADO MODAL -->
+<div id="result-modal" style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 2000; align-items: center; justify-content: center;">
+  <div style="background: white; padding: var(--spacing-xl); border-radius: 10px; max-width: 600px; width: 90%;">
+    <h2 id="result-title" style="color: var(--color-primary); text-align: center; margin-bottom: var(--spacing-lg);"></h2>
+    <div id="result-message" style="color: #666; margin-bottom: var(--spacing-lg); line-height: 1.8;"></div>
+    <div id="result-products" style="margin-bottom: var(--spacing-lg);"></div>
+    <div style="text-align: center;">
+      <button class="btn btn-primary" onclick="goToRecommendedProducts()" style="margin-right: var(--spacing-sm);">Ver Produtos Recomendados</button>
+      <button class="btn btn-outline" onclick="resetQuiz()">Fazer Quiz Novamente</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sobre Viva Bem</h4>
+      <p>Transformamos a vida de mulheres 30+ com produtos naturais e conhecimento sobre bem-estar integral.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Compre</h4>
+      <a href="loja.html">Loja</a>
+      <a href="loja.html?cat=suplementos">Suplementos</a>
+      <a href="loja.html?cat=skincare">Skincare</a>
+      <a href="clube.html">Clube de Assinatura</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Conteúdo</h4>
+      <a href="blog.html">Blog</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contato</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Siga-nos</h4>
+      <div class="social-links">
+        <a href="#">f</a>
+        <a href="#">📘</a>
+        <a href="#">📌</a>
+        <a href="#">🎵</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Viva Bem. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- CARRINHO DRAWER -->
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3>Seu Carrinho</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cart-total">R$ 0,00</span>
+    </div>
+    <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='carrinho.html'">Finalizar Compra</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/carrinho.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja - Viva Bem</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo">✨ Viva Bem</a>
+    
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="loja.html">Loja</a>
+      <a href="clube.html">Clube</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+
+    <div class="header-icons">
+      <div class="search-box">
+        <input type="text" placeholder="Buscar produtos..." id="search-input" onkeyup="filterProducts()">
+        <span>🔍</span>
+      </div>
+      <button class="icon-btn" onclick="toggleDarkMode()" title="Modo escuro">🌙</button>
+      <button class="icon-btn" onclick="toggleCart()" title="Carrinho">
+        🛒
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="min-height: 300px; padding: 60px var(--spacing-md);">
+  <div class="hero-content">
+    <h1>Nossa Loja</h1>
+    <p>Produtos naturais selecionados para seu bem-estar</p>
+  </div>
+</section>
+
+<!-- LOJA PRINCIPAL -->
+<section class="container" style="padding: var(--spacing-lg) var(--spacing-md); display: grid; grid-template-columns: 250px 1fr; gap: var(--spacing-lg);">
+  
+  <!-- SIDEBAR FILTROS -->
+  <aside id="filters-sidebar" style="background: var(--color-white); padding: var(--spacing-lg); border-radius: 10px; height: fit-content;">
+    <h3 style="margin-bottom: var(--spacing-md);">Filtros</h3>
+
+    <!-- Categorias -->
+    <div style="margin-bottom: var(--spacing-lg);">
+      <h4 style="margin-bottom: var(--spacing-sm);">Categoria</h4>
+      <div class="accordion">
+        <button class="accordion-header" onclick="toggleAccordion(this)">Categorias <span>▼</span></button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <label><input type="checkbox" name="category" value="suplementos" onchange="filterProducts()"> Suplementos</label><br>
+            <label><input type="checkbox" name="category" value="skincare" onchange="filterProducts()"> Skincare</label><br>
+            <label><input type="checkbox" name="category" value="bem-estar" onchange="filterProducts()"> Bem-Estar</label><br>
+            <label><input type="checkbox" name="category" value="saude-mental" onchange="filterProducts()"> Saúde Mental</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Preço -->
+    <div style="margin-bottom: var(--spacing-lg);">
+      <h4 style="margin-bottom: var(--spacing-sm);">Faixa de Preço</h4>
+      <div class="accordion">
+        <button class="accordion-header" onclick="toggleAccordion(this)">Preço <span>▼</span></button>
+        <div class="accordion-content">
+          <div class="accordion-body">
+            <label><input type="checkbox" name="price" value="0-50" onchange="filterProducts()"> Até R$ 50</label><br>
+            <label><input type="checkbox" name="price" value="50-100" onchange="filterProducts()"> R$ 50 - R$ 100</label><br>
+            <label><input type="checkbox" name="price" value="100-200" onchange="filterProducts()"> R$ 100 - R$ 200</label><br>
+            <label><input type="checkbox" name="price" value="200+" onchange="filterProducts()"> Acima de R$ 200</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div style="margin-bottom: var(--spacing-lg);">
+      <h4 style="margin-bottom: var(--spacing-sm);">Status</h4>
+      <label><input type="checkbox" name="status" value="bestseller" onchange="filterProducts()"> Mais Vendido</label><br>
+      <label><input type="checkbox" name="status" value="new" onchange="filterProducts()"> Novo</label><br>
+      <label><input type="checkbox" name="status" value="promotion" onchange="filterProducts()"> Em Promoção</label>
+    </div>
+
+    <button class="btn btn-secondary" style="width: 100%;" onclick="resetFilters()">Limpar Filtros</button>
+  </aside>
+
+  <!-- PRODUTOS -->
+  <div>
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg);">
+      <p id="results-count" style="color: #666;"></p>
+      <select id="sort-select" onchange="sortProducts()" style="padding: var(--spacing-sm); border-radius: 5px; border: 1px solid var(--color-light);">
+        <option value="relevance">Ordenar por: Relevância</option>
+        <option value="price-low">Menor Preço</option>
+        <option value="price-high">Maior Preço</option>
+        <option value="newest">Mais Novo</option>
+        <option value="rating">Melhor Avaliado</option>
+      </select>
+    </div>
+
+    <div class="products-grid" id="products-grid"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sobre Viva Bem</h4>
+      <p>Transformamos a vida de mulheres 30+ com produtos naturais e conhecimento sobre bem-estar integral.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Compre</h4>
+      <a href="loja.html">Loja</a>
+      <a href="loja.html?cat=suplementos">Suplementos</a>
+      <a href="loja.html?cat=skincare">Skincare</a>
+      <a href="clube.html">Clube de Assinatura</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Conteúdo</h4>
+      <a href="blog.html">Blog</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contato</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Siga-nos</h4>
+      <div class="social-links">
+        <a href="#">f</a>
+        <a href="#">📘</a>
+        <a href="#">📌</a>
+        <a href="#">🎵</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Viva Bem. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- CARRINHO DRAWER -->
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3>Seu Carrinho</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cart-total">R$ 0,00</span>
+    </div>
+    <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='carrinho.html'">Ver Carrinho</button>
+    <button class="btn btn-secondary" style="width: 100%;" onclick="goToCheckout()">Finalizar Compra</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/carrinho.js"></script>
+<script src="js/filtros.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Produto - Viva Bem</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo">✨ Viva Bem</a>
+    
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="loja.html">Loja</a>
+      <a href="clube.html">Clube</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+
+    <div class="header-icons">
+      <button class="icon-btn" onclick="toggleDarkMode()" title="Modo escuro">🌙</button>
+      <button class="icon-btn" onclick="toggleCart()" title="Carrinho">
+        🛒
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="container" style="padding: var(--spacing-md); border-bottom: 1px solid var(--color-light); margin-top: 20px;">
+  <a href="loja.html" style="color: var(--color-primary); text-decoration: none;">Loja</a>
+  <span style="color: #999; margin: 0 var(--spacing-sm);">/</span>
+  <span id="breadcrumb-category" style="color: #666;"></span>
+  <span style="color: #999; margin: 0 var(--spacing-sm);">/</span>
+  <span id="breadcrumb-name" style="color: var(--color-dark);"></span>
+</div>
+
+<!-- PRODUTO -->
+<section class="container" style="padding: var(--spacing-xl) var(--spacing-md); display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl);">
+  
+  <!-- GALERIA -->
+  <div>
+    <div id="product-main-image" style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--color-light) 0%, var(--color-accent) 100%); border-radius: 10px; margin-bottom: var(--spacing-lg); display: flex; align-items: center; justify-content: center; font-size: 6rem;"></div>
+    
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-sm);">
+      <img id="thumb-1" src="#" alt="Imagem 1" style="width: 100%; height: 100px; background: var(--color-light); border-radius: 8px; cursor: pointer; border: 2px solid transparent;" onclick="changeImage(1)">
+      <img id="thumb-2" src="#" alt="Imagem 2" style="width: 100%; height: 100px; background: var(--color-light); border-radius: 8px; cursor: pointer; border: 2px solid transparent;" onclick="changeImage(2)">
+      <img id="thumb-3" src="#" alt="Imagem 3" style="width: 100%; height: 100px; background: var(--color-light); border-radius: 8px; cursor: pointer; border: 2px solid transparent;" onclick="changeImage(3)">
+      <img id="thumb-4" src="#" alt="Imagem 4" style="width: 100%; height: 100px; background: var(--color-light); border-radius: 8px; cursor: pointer; border: 2px solid transparent;" onclick="changeImage(4)">
+    </div>
+  </div>
+
+  <!-- INFORMAÇÕES -->
+  <div>
+    <div class="product-category" id="product-category"></div>
+    <h1 id="product-name" style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: var(--spacing-md); color: var(--color-dark);"></h1>
+
+    <div class="product-rating" style="margin-bottom: var(--spacing-lg);">
+      <span id="rating-stars"></span>
+      <span id="rating-count" style="color: #999;"></span>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+      <div id="product-price-original" style="text-decoration: line-through; color: #999; font-size: 1rem;"></div>
+      <div id="product-price" style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--color-primary); font-weight: bold;"></div>
+      <div id="discount-badge" style="background: var(--color-secondary); color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold;"></div>
+    </div>
+
+    <p id="product-description" style="color: #666; line-height: 1.8; margin-bottom: var(--spacing-lg);"></p>
+
+    <div style="background: var(--color-light); padding: var(--spacing-md); border-radius: 8px; margin-bottom: var(--spacing-lg);">
+      <h3 style="margin-bottom: var(--spacing-sm); font-size: 1.1rem;">Ingredientes</h3>
+      <p id="product-ingredients" style="color: #666; font-size: 0.95rem;"></p>
+    </div>
+
+    <!-- OPÇÕES DE COMPRA -->
+    <div style="margin-bottom: var(--spacing-lg);">
+      <label style="display: block; margin-bottom: var(--spacing-sm);">Quantidade:</label>
+      <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+        <button class="btn btn-outline" onclick="decreaseQuantity()" style="width: 50px;">−</button>
+        <input type="number" id="quantity" value="1" min="1" style="width: 80px; text-align: center;">
+        <button class="btn btn-outline" onclick="increaseQuantity()" style="width: 50px;">+</button>
+      </div>
+    </div>
+
+    <!-- OPÇÃO DE ASSINATURA -->
+    <div style="background: rgba(107, 153, 118, 0.1); padding: var(--spacing-md); border-radius: 8px; margin-bottom: var(--spacing-lg);">
+      <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+        <input type="checkbox" id="subscription-option">
+        <div>
+          <strong>Receber mensalmente</strong>
+          <p style="font-size: 0.9rem; color: #666; margin: 0;">Desconto extra de 10% + frete grátis</p>
+        </div>
+      </label>
+    </div>
+
+    <!-- BOTÕES -->
+    <div style="display: flex; gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+      <button class="btn btn-primary" style="flex: 1; padding: var(--spacing-md);" onclick="addCurrentProductToCart()">Adicionar ao Carrinho</button>
+      <button class="btn btn-outline" style="flex: 1; padding: var(--spacing-md);" onclick="buyNow()">Comprar Agora</button>
+    </div>
+
+    <!-- INFORMAÇÕES ADICIONAIS -->
+    <div style="border-top: 1px solid var(--color-light); padding-top: var(--spacing-lg);">
+      <p style="color: #666; font-size: 0.9rem; margin-bottom: var(--spacing-sm);">
+        ✓ Frete grátis para compras acima de R$ 100<br>
+        ✓ Garantia de satisfação ou seu dinheiro de volta<br>
+        ✓ Entrega em 2-3 dias úteis<br>
+        ✓ Suporte ao cliente 24/7
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ABAS DE INFORMAÇÃO -->
+<section class="container" style="padding: var(--spacing-xl) var(--spacing-md);">
+  <div class="accordion" style="margin-bottom: var(--spacing-xl);">
+    <button class="accordion-header active" onclick="toggleAccordion(this); document.getElementById('description-tab').classList.add('active')">Descrição Completa <span>▼</span></button>
+    <div class="accordion-content active" id="description-tab">
+      <div class="accordion-body" id="full-description"></div>
+    </div>
+
+    <button class="accordion-header" onclick="toggleAccordion(this); document.getElementById('usage-tab').classList.add('active')">Como Usar <span>▼</span></button>
+    <div class="accordion-content" id="usage-tab">
+      <div class="accordion-body" id="usage-instructions"></div>
+    </div>
+
+    <button class="accordion-header" onclick="toggleAccordion(this); document.getElementById('benefits-tab').classList.add('active')">Benefícios <span>▼</span></button>
+    <div class="accordion-content" id="benefits-tab">
+      <div class="accordion-body" id="product-benefits"></div>
+    </div>
+  </div>
+</section>
+
+<!-- AVALIAÇÕES -->
+<section class="container" style="padding: var(--spacing-xl) var(--spacing-md); border-top: 1px solid var(--color-light);">
+  <h2>Avaliações de Clientes</h2>
+  
+  <div style="display: grid; grid-template-columns: 200px 1fr; gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);">
+    <div style="text-align: center;">
+      <div style="font-size: 3rem; font-weight: bold; color: var(--color-primary); margin-bottom: var(--spacing-sm);" id="avg-rating">4.8</div>
+      <div class="product-rating" style="justify-content: center; margin-bottom: var(--spacing-md);">
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+        <span class="star">⭐</span>
+      </div>
+      <p style="color: #999; font-size: 0.9rem;">Baseado em <span id="reviews-count">248</span> avaliações</p>
+    </div>
+
+    <div id="reviews-list"></div>
+  </div>
+
+  <!-- COMPRE JUNTO -->
+  <h3 style="margin-bottom: var(--spacing-lg);">Frequentemente Comprados Juntos</h3>
+  <div class="products-grid" id="related-products" style="margin-bottom: var(--spacing-xl);"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sobre Viva Bem</h4>
+      <p>Transformamos a vida de mulheres 30+ com produtos naturais e conhecimento sobre bem-estar integral.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Compre</h4>
+      <a href="loja.html">Loja</a>
+      <a href="loja.html?cat=suplementos">Suplementos</a>
+      <a href="loja.html?cat=skincare">Skincare</a>
+      <a href="clube.html">Clube de Assinatura</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Conteúdo</h4>
+      <a href="blog.html">Blog</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contato</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Siga-nos</h4>
+      <div class="social-links">
+        <a href="#">f</a>
+        <a href="#">📘</a>
+        <a href="#">📌</a>
+        <a href="#">🎵</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Viva Bem. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- CARRINHO DRAWER -->
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3>Seu Carrinho</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cart-total">R$ 0,00</span>
+    </div>
+    <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='carrinho.html'">Ver Carrinho</button>
+    <button class="btn btn-secondary" style="width: 100%;" onclick="goToCheckout()">Finalizar Compra</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/carrinho.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clube de Assinatura - Viva Bem</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo">✨ Viva Bem</a>
+    
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="loja.html">Loja</a>
+      <a href="clube.html">Clube</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+
+    <div class="header-icons">
+      <button class="icon-btn" onclick="toggleDarkMode()" title="Modo escuro">🌙</button>
+      <button class="icon-btn" onclick="toggleCart()" title="Carrinho">
+        🛒
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Clube de Assinatura Viva Bem</h1>
+    <p>Receba produtos personalizados todo mês com descontos exclusivos e brindes especiais</p>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="container" style="padding: var(--spacing-xl) var(--spacing-md); text-align: center;">
+  <h2 style="margin-bottom: var(--spacing-xl);">Por Que Se Inscrever?</h2>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg);">
+    <div style="padding: var(--spacing-lg);">
+      <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">💰</div>
+      <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">Economize Mais</h3>
+      <p style="color: #666;">Desconto de 20% a 30% em todos os produtos + frete grátis</p>
+    </div>
+
+    <div style="padding: var(--spacing-lg);">
+      <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">📦</div>
+      <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">Entrega Automática</h3>
+      <p style="color: #666;">Seus produtos chegam todo mês na sua porta sem esforço</p>
+    </div>
+
+    <div style="padding: var(--spacing-lg);">
+      <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">🎁</div>
+      <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">Brindes Exclusivos</h3>
+      <p style="color: #666;">Produtos únicos e edições limitadas apenas para assinantes</p>
+    </div>
+
+    <div style="padding: var(--spacing-lg);">
+      <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">👥</div>
+      <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">Comunidade</h3>
+      <p style="color: #666;">Acesso a grupo exclusivo com dicas e conteúdo especial</p>
+    </div>
+
+    <div style="padding: var(--spacing-lg);">
+      <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">⏸️</div>
+      <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">Flexibilidade</h3>
+      <p style="color: #666;">Pause, cancele ou modifique sua assinatura a qualquer hora</p>
+    </div>
+
+    <div style="padding: var(--spacing-lg);">
+      <div style="font-size: 3rem; margin-bottom: var(--spacing-md);">💁‍♀️</div>
+      <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">Consultoria</h3>
+      <p style="color: #666;">Suporte especializado para escolher os melhores produtos</p>
+    </div>
+  </div>
+</section>
+
+<!-- PLANOS -->
+<section class="container" style="padding: var(--spacing-xl) var(--spacing-md);">
+  <h2 style="text-align: center; margin-bottom: var(--spacing-xl);">Escolha Seu Plano</h2>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--spacing-lg); margin-bottom: var(--spacing-xl);">
+    
+    <!-- PLANO MENSAL -->
+    <div style="background: var(--color-white); padding: var(--spacing-lg); border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: var(--transition); position: relative;">
+      <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Plano Mensal</h3>
+      <div style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: var(--spacing-sm); font-weight: bold;">R$ 99,90</div>
+      <p style="color: #999; margin-bottom: var(--spacing-lg); font-size: 0.95rem;">por mês <span style="color: var(--color-primary); font-weight: bold;">economize 20%</span></p>
+
+      <ul style="text-align: left; margin-bottom: var(--spacing-lg); color: #666; list-style: none; padding: 0;">
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-light);">✓ 1 produto personalizado</li>
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-light);">✓ Desconto 20% em tudo</li>
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-light);">✓ Frete grátis</li>
+        <li style="padding: var(--spacing-sm) 0;">✓ Suporte prioritário</li>
+      </ul>
+
+      <button class="btn btn-primary" style="width: 100%;" onclick="selectPlan('mensal')">Escolher Plano</button>
+      <p style="text-align: center; font-size: 0.85rem; color: #999; margin-top: var(--spacing-md);">Cancele a qualquer momento</p>
+    </div>
+
+    <!-- PLANO TRIMESTRAL (DESTAQUE) -->
+    <div style="background: var(--color-primary); color: var(--color-white); padding: var(--spacing-lg); border-radius: 10px; box-shadow: 0 4px 15px rgba(107, 153, 118, 0.3); transition: var(--transition); transform: scale(1.05); position: relative;">
+      <span style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--color-secondary); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: bold;">MAIS POPULAR</span>
+      
+      <h3 style="margin-bottom: var(--spacing-md); margin-top: var(--spacing-lg);">Plano Trimestral</h3>
+      <div style="font-size: 2.5rem; margin-bottom: var(--spacing-sm); font-weight: bold;">R$ 279,90</div>
+      <p style="opacity: 0.9; margin-bottom: var(--spacing-lg); font-size: 0.95rem;">3 meses <span style="font-weight: bold;">economize 25%</span></p>
+
+      <ul style="text-align: left; margin-bottom: var(--spacing-lg); list-style: none; padding: 0;">
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ 3 produtos personalizados</li>
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ Desconto 25% em tudo</li>
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ Frete grátis</li>
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid rgba(255,255,255,0.2);">✓ Brinde exclusivo</li>
+        <li style="padding: var(--spacing-sm) 0;">✓ Suporte VIP</li>
+      </ul>
+
+      <button class="btn btn-secondary" style="width: 100%;" onclick="selectPlan('trimestral')">Escolher Plano</button>
+      <p style="text-align: center; font-size: 0.85rem; opacity: 0.9; margin-top: var(--spacing-md);">Melhor custo-benefício</p>
+    </div>
+
+    <!-- PLANO SEMESTRAL -->
+    <div style="background: var(--color-white); padding: var(--spacing-lg); border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); transition: var(--transition);">
+      <h3 style="color: var(--color-primary); margin-bottom: var(--spacing-md);">Plano Semestral</h3>
+      <div style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: var(--spacing-sm); font-weight: bold;">R$ 519,90</div>
+      <p style="color: #999; margin-bottom: var(--spacing-lg); font-size: 0.95rem;">6 meses <span style="color: var(--color-primary); font-weight: bold;">economize 30%</span></p>
+
+      <ul style="text-align: left; margin-bottom: var(--spacing-lg); color: #666; list-style: none; padding: 0;">
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-light);">✓ 6 produtos personalizados</li>
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-light);">✓ Desconto 30% em tudo</li>
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-light);">✓ Frete grátis</li>
+        <li style="padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-light);">✓ 2 brindes exclusivos</li>
+        <li style="padding: var(--spacing-sm) 0;">✓ Suporte VIP + Consultoria</li>
+      </ul>
+
+      <button class="btn btn-primary" style="width: 100%;" onclick="selectPlan('semestral')">Escolher Plano</button>
+      <p style="text-align: center; font-size: 0.85rem; color: #999; margin-top: var(--spacing-md);">Cancele a qualquer momento</p>
+    </div>
+  </div>
+
+  <!-- COMPARATIVO VISUAL -->
+  <div style="background: var(--color-light); padding: var(--spacing-lg); border-radius: 10px; margin-bottom: var(--spacing-xl);">
+    <h3 style="text-align: center; margin-bottom: var(--spacing-lg);">Comparativo de Planos</h3>
+    <table style="width: 100%; text-align: center; border-collapse: collapse;">
+      <thead>
+        <tr style="border-bottom: 2px solid var(--color-primary);">
+          <th style="padding: var(--spacing-md); text-align: left;">Recurso</th>
+          <th style="padding: var(--spacing-md);">Mensal</th>
+          <th style="padding: var(--spacing-md);">Trimestral</th>
+          <th style="padding: var(--spacing-md);">Semestral</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: var(--spacing-md); text-align: left;">Produtos/Mês</td>
+          <td style="padding: var(--spacing-md);">1</td>
+          <td style="padding: var(--spacing-md);">3</td>
+          <td style="padding: var(--spacing-md);">6</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: var(--spacing-md); text-align: left;">Desconto</td>
+          <td style="padding: var(--spacing-md);">20%</td>
+          <td style="padding: var(--spacing-md);">25%</td>
+          <td style="padding: var(--spacing-md);">30%</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: var(--spacing-md); text-align: left;">Frete Grátis</td>
+          <td style="padding: var(--spacing-md);">✓</td>
+          <td style="padding: var(--spacing-md);">✓</td>
+          <td style="padding: var(--spacing-md);">✓</td>
+        </tr>
+        <tr style="border-bottom: 1px solid #ddd;">
+          <td style="padding: var(--spacing-md); text-align: left;">Brindes</td>
+          <td style="padding: var(--spacing-md);">—</td>
+          <td style="padding: var(--spacing-md);">1</td>
+          <td style="padding: var(--spacing-md);">2</td>
+        </tr>
+        <tr>
+          <td style="padding: var(--spacing-md); text-align: left;">Suporte Prioritário</td>
+          <td style="padding: var(--spacing-md);">✓</td>
+          <td style="padding: var(--spacing-md);">VIP</td>
+          <td style="padding: var(--spacing-md);">VIP+</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="container" style="padding: var(--spacing-xl) var(--spacing-md); background: var(--color-light);">
+  <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Dúvidas Frequentes</h2>
+
+  <div class="accordion" style="max-width: 700px; margin: 0 auto;">
+    <button class="accordion-header" onclick="toggleAccordion(this)">Como funciona a assinatura? <span>▼</span></button>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        Você escolhe um plano, e cada mês recebemos um cuidado especial na sua caixa de correio. Todos os produtos são personalizados de acordo com suas necessidades e preferências. Você pode modificar, pausar ou cancelar sua assinatura a qualquer momento!
+      </div>
+    </div>
+
+    <button class="accordion-header" onclick="toggleAccordion(this)">Posso cancelar a qualquer hora? <span>▼</span></button>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        Absolutamente! Sem compromisso. Você pode cancelar sua assinatura sem penalidades sempre que quiser através de sua conta ou entrando em contato conosco.
+      </div>
+    </div>
+
+    <button class="accordion-header" onclick="toggleAccordion(this)">E se não gostar de algum produto? <span>▼</span></button>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        Nossa garantia de satisfação 100% cobre todos os produtos de assinatura. Se algo não for perfeito, trocamos ou devolvemos o dinheiro sem fazer perguntas!
+      </div>
+    </div>
+
+    <button class="accordion-header" onclick="toggleAccordion(this)">Como os produtos são personalizados? <span>▼</span></button>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        Nosso quiz de saúde inicial identifica suas principais necessidades. Depois, você escolhe suas preferências no painel de controle e nossa equipe seleciona os melhores produtos para você a cada mês.
+      </div>
+    </div>
+
+    <button class="accordion-header" onclick="toggleAccordion(this)">Qual é o valor do frete? <span>▼</span></button>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        O frete é gratuito para todos os planos de assinatura! Entregamos em 2-3 dias úteis em todo o Brasil via correios ou transportadora.
+      </div>
+    </div>
+
+    <button class="accordion-header" onclick="toggleAccordion(this)">Posso mudar de plano depois? <span>▼</span></button>
+    <div class="accordion-content">
+      <div class="accordion-body">
+        Sim! Você pode fazer upgrade ou downgrade de plano a qualquer momento. As mudanças entram em vigor no próximo período de cobrança.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="container" style="padding: var(--spacing-xl) var(--spacing-md); text-align: center;">
+  <h2 style="margin-bottom: var(--spacing-lg);">Pronta para Cuidar de Você?</h2>
+  <p style="font-size: 1.1rem; color: #666; margin-bottom: var(--spacing-lg);">Escolha seu plano e comece sua jornada de bem-estar hoje mesmo!</p>
+  <button class="btn btn-primary" style="padding: var(--spacing-md) var(--spacing-xl); font-size: 1.1rem;" onclick="scrollToPlans()">Ver Planos</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sobre Viva Bem</h4>
+      <p>Transformamos a vida de mulheres 30+ com produtos naturais e conhecimento sobre bem-estar integral.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Compre</h4>
+      <a href="loja.html">Loja</a>
+      <a href="loja.html?cat=suplementos">Suplementos</a>
+      <a href="loja.html?cat=skincare">Skincare</a>
+      <a href="clube.html">Clube de Assinatura</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Conteúdo</h4>
+      <a href="blog.html">Blog</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contato</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Siga-nos</h4>
+      <div class="social-links">
+        <a href="#">f</a>
+        <a href="#">📘</a>
+        <a href="#">📌</a>
+        <a href="#">🎵</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Viva Bem. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- CARRINHO DRAWER -->
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <h3>Seu Carrinho</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cart-total">R$ 0,00</span>
+    </div>
+    <button class="btn btn-primary" style="width: 100%;" onclick="window.location.href='carrinho.html'">Ver Carrinho</button>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/carrinho.js"></script>
+
+<script>
+  function scrollToPlans() {
+    document.querySelector('section.container h2').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function selectPlan(plan) {
+    let planName = plan.charAt(0).toUpperCase() + plan.slice(1);
+    alert(`Você selecionou o plano ${planName}! Redirecionando para checkout...`);
+    window.location.href = 'checkout.html?plan=' + plan;
+  }
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho - Viva Bem</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo">✨ Viva Bem</a>
+    
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="loja.html">Loja</a>
+      <a href="clube.html">Clube</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+
+    <div class="header-icons">
+      <button class="icon-btn" onclick="toggleDarkMode()" title="Modo escuro">🌙</button>
+      <button class="icon-btn" onclick="toggleCart()" title="Carrinho">
+        🛒
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- CARRINHO VAZIO ou COM ITENS -->
+<section class="container" style="padding: var(--spacing-xl) var(--spacing-md);">
+  <h1 style="margin-bottom: var(--spacing-lg);">Seu Carrinho</h1>
+
+  <div id="empty-cart" style="text-align: center; padding: var(--spacing-xl);">
+    <div style="font-size: 4rem; margin-bottom: var(--spacing-lg);">🛒</div>
+    <h2 style="color: #666; margin-bottom: var(--spacing-lg);">Seu carrinho está vazio</h2>
+    <p style="color: #999; margin-bottom: var(--spacing-lg);">Comece a adicionar produtos para sua compra!</p>
+    <a href="loja.html" class="btn btn-primary">Ir para a Loja</a>
+  </div>
+
+  <div id="cart-content" style="display: none; display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-lg);">
+    
+    <!-- ITENS DO CARRINHO -->
+    <div>
+      <table style="width: 100%; border-collapse: collapse;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--color-light);">
+            <th style="text-align: left; padding: var(--spacing-md);">Produto</th>
+            <th style="text-align: center; padding: var(--spacing-md);">Qtd</th>
+            <th style="text-align: right; padding: var(--spacing-md);">Preço</th>
+            <th style="padding: var(--spacing-md);"></th>
+          </tr>
+        </thead>
+        <tbody id="cart-items-table"></tbody>
+      </table>
+
+      <!-- CUPOM DE DESCONTO -->
+      <div style="margin-top: var(--spacing-lg); padding: var(--spacing-lg); background: var(--color-light); border-radius: 8px;">
+        <h3 style="margin-bottom: var(--spacing-md);">Cupom de Desconto</h3>
+        <div style="display: flex; gap: var(--spacing-sm);">
+          <input type="text" id="coupon-input" placeholder="Digite o código do cupom..." style="flex: 1;">
+          <button class="btn btn-primary" onclick="applyCoupon()">Aplicar</button>
+        </div>
+        <p id="coupon-message" style="font-size: 0.9rem; margin-top: var(--spacing-sm);"></p>
+      </div>
+
+      <!-- OPÇÃO DE ASSINATURA -->
+      <div style="margin-top: var(--spacing-lg); padding: var(--spacing-lg); background: rgba(107, 153, 118, 0.1); border-radius: 8px;">
+        <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer;">
+          <input type="checkbox" id="subscription-checkbox">
+          <div>
+            <strong>Transformar em assinatura</strong>
+            <p style="font-size: 0.9rem; color: #666; margin: 5px 0 0 0;">Receba este kit todo mês com 10% de desconto!</p>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- RESUMO DE COMPRA -->
+    <div style="background: var(--color-white); padding: var(--spacing-lg); border-radius: 10px; height: fit-content; box-shadow: 0 2px 10px rgba(0,0,0,0.08);">
+      <h3 style="margin-bottom: var(--spacing-lg);">Resumo da Compra</h3>
+
+      <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm); color: #666;">
+        <span>Subtotal:</span>
+        <span id="subtotal">R$ 0,00</span>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm); color: #666;">
+        <span>Frete:</span>
+        <span id="shipping">Calculado no checkout</span>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm); color: var(--color-secondary); font-weight: bold;" id="discount-row" style="display: none;">
+        <span>Desconto:</span>
+        <span id="discount">R$ 0,00</span>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold; color: var(--color-primary); padding-top: var(--spacing-md); border-top: 2px solid var(--color-light); margin-bottom: var(--spacing-lg);">
+        <span>Total:</span>
+        <span id="total">R$ 0,00</span>
+      </div>
+
+      <button class="btn btn-primary" style="width: 100%; margin-bottom: var(--spacing-sm); padding: var(--spacing-md);" onclick="goToCheckout()">Finalizar Compra</button>
+      <a href="loja.html" class="btn btn-outline" style="width: 100%; display: block; text-align: center; padding: var(--spacing-md);">Continuar Comprando</a>
+
+      <p style="text-align: center; font-size: 0.85rem; color: #999; margin-top: var(--spacing-lg);">
+        ✓ Frete grátis acima de R$ 100<br>
+        ✓ Parcelamento em até 3x<br>
+        ✓ 30 dias para devolver
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS RELACIONADOS -->
+<section class="container" style="padding: var(--spacing-xl) var(--spacing-md); border-top: 1px solid var(--color-light);">
+  <h2 style="text-align: center; margin-bottom: var(--spacing-lg);">Você Pode Gostar Também</h2>
+  <div class="products-grid" id="related-products"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sobre Viva Bem</h4>
+      <p>Transformamos a vida de mulheres 30+ com produtos naturais e conhecimento sobre bem-estar integral.</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Compre</h4>
+      <a href="loja.html">Loja</a>
+      <a href="loja.html?cat=suplementos">Suplementos</a>
+      <a href="loja.html?cat=skincare">Skincare</a>
+      <a href="clube.html">Clube de Assinatura</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Conteúdo</h4>
+      <a href="blog.html">Blog</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="#">FAQ</a>
+      <a href="#">Contato</a>
+    </div>
+
+    <div class="footer-section">
+      <h4>Siga-nos</h4>
+      <div class="social-links">
+        <a href="#">f</a>
+        <a href="#">📘</a>
+        <a href="#">📌</a>
+        <a href="#">🎵</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 Viva Bem. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/carrinho.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    displayCartPage();
+  });
+
+  function displayCartPage() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const emptyCart = document.getElementById('empty-cart');
+    const cartContent = document.getElementById('cart-content');
+
+    if (cart.length === 0) {
+      emptyCart.style.display = 'block';
+      cartContent.style.display = 'none';
+    } else {
+      emptyCart.style.display = 'none';
+      cartContent.style.display = 'grid';
+      renderCartTable();
+      updateCartSummary();
+    }
+  }
+
+  function renderCartTable() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const tbody = document.getElementById('cart-items-table');
+    tbody.innerHTML = '';
+
+    cart.forEach((item, index) => {
+      const tr = document.createElement('tr');
+      tr.style.borderBottom = '1px solid var(--color-light)';
+      tr.innerHTML = `
+        <td style="padding: var(--spacing-md);">
+          <strong>${item.name}</strong>
+        </td>
+        <td style="text-align: center; padding: var(--spacing-md);">
+          <input type="number" value="${item.quantity}" min="1" onchange="updateQuantity(${index}, this.value)" style="width: 50px; text-align: center;">
+        </td>
+        <td style="text-align: right; padding: var(--spacing-md);">R$ ${(item.price * item.quantity).toFixed(2)}</td>
+        <td style="padding: var(--spacing-md); text-align: center;">
+          <button onclick="removeFromCart(${index})" style="background: none; border: none; color: #999; cursor: pointer; font-size: 1.2rem;">✕</button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function updateQuantity(index, quantity) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (quantity > 0) {
+      cart[index].quantity = parseInt(quantity);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCartTable();
+      updateCartSummary();
+    }
+  }
+
+  function removeFromCart(index) {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    displayCartPage();
+  }
+
+  function updateCartSummary() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    
+    document.getElementById('subtotal').textContent = `R$ ${subtotal.toFixed(2)}`;
+    document.getElementById('total').textContent = `R$ ${subtotal.toFixed(2)}`;
+  }
+
+  function applyCoupon() {
+    const couponCode = document.getElementById('coupon-input').value.toUpperCase();
+    const coupons = {
+      'BEMVINDO10': 0.10,
+      'SAUDE15': 0.15,
+      'ASSINANTE20': 0.20
+    };
+
+    if (coupons[couponCode]) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+      const discount = subtotal * coupons[couponCode];
+      const total = subtotal - discount;
+
+      document.getElementById('discount-row').style.display = 'flex';
+      document.getElementById('discount').textContent = `- R$ ${discount.toFixed(2)}`;
+      document.getElementById('total').textContent = `R$ ${total.toFixed(2)}`;
+      document.getElementById('coupon-message').textContent = `✓ Cupom aplicado! Desconto de ${(coupons[couponCode] * 100).toFixed(0)}%`;
+      document.getElementById('coupon-message').style.color = 'var(--color-primary)';
+    } else {
+      document.getElementById('coupon-message').textContent = '✗ Cupom inválido';
+      document.getElementById('coupon-message').style.color = '#e74c3c';
+    }
+  }
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Viva Bem</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo">✨ Viva Bem</a>
+    
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="quiz.html">Quiz Saúde</a>
+      <a href="loja.html">Loja</a>
+      <a href="clube.html">Clube</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+
+    <div class="header-icons">
+      <button class="icon-btn" onclick="toggleDarkMode()" title="Modo escuro">🌙</button>
+      <button class="icon-btn" onclick="toggleCart()" title="Carrinho">
+        🛒
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- CHECKOUT -->
+<section class="container" style="padding: var(--spacing-xl) var(--spacing-md); display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-lg);">
+  
+  <!-- FORMULÁRIO -->
+  <div>
+    <h1 style="margin-bottom: var(--spacing-lg);">Finalizar Compra</h1>
+
+    <!-- DADOS PESSOAIS -->
+    <div style="background: var(--color-white); padding: var(--spacing-lg); border-radius: 10px; margin-bottom: var(--spacing-lg); box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      <h2 style="font-size: 1.3rem; margin-bottom: var(--spacing-lg);">1. Dados Pessoais</h2>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md);">
+        <div class="form-group">
+          <label>Nome Completo *</label>
+          <input type="text" id="fullname" required>
+        </div>
+
+        <div class="form-group">
+          <label>E-mail *</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Telefone *</label>
+          <input type="tel" id="phone" placeholder="(11) 99999-9999" required>
+        </div>
+
+        <div class="form-group">
+          <label>CPF *</label>
+          <input type="text" id="cpf" placeholder="000.000.000-00" required>
+        </div>
+      </div>
+
+      <label style="display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; margin-top: var(--spacing-md);">
+        <input type="checkbox" id="newsletter-opt">
+        <span>Desejo receber dicas de bem-estar e ofertas exclusivas</span>
+      </label>
+    </div>
+
+    <!-- ENDEREÇO DE ENTREGA -->
+    <div style="background: var(--color-white); padding: var(--spacing-lg); border-radius: 10px; margin-bottom: var(--spacing-lg); box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      <h2 style="font-size: 1.3rem; margin-bottom: var(--spacing-lg);">2. Endereço de Entrega</h2>
+
+      <div class="form-group">
+        <label>CEP *</label>
+        <input type="text" id="cep" placeholder="00000-000" onblur="fetchAddress()" required>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-md);">
+        <div class="form-group">
+          <label>Rua *</label>
+          <input type="text" id="street" required>
+        </div>
+
+        <div class="form-group">
+          <label>Número *</label>
+          <input type="text" id="number" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Complemento</label>
+        <input type="text" id="complement">
+      </div>
+
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: var(--spacing-md);">
+        <div class="form-group">
+          <label>Bairro *</label>
+          <input type="text" id="neighborhood" required>
+        </div>
+
+        <div class="form-group">
+          <label>Cidade *</label>
+          <input type="text" id="city" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Estado *</label>
+        <select id="state" required>
+          <option value="">Selecione um estado</option>
+          <option value="SP">São Paulo</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="BA">Bahia</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="PR">Paraná</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="PE">Pernambuco</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- FORMA DE PAGAMENTO -->
+    <div style="background: var(--color-white); padding: var(--spacing-lg); border-radius: 10px; margin-bottom: var(--spacing-lg); box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      <h2 style="font-size: 1.3rem; margin-bottom: var(--spacing-lg);">3. Forma de Pagamento</h2>
+
+      <div style="display: flex; gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+        <label style="flex: 1; cursor: pointer;">
+          <input type="radio" name="payment" value="card" checked onclick="showPaymentMethod('card')">
+          <span style="display: flex; align-items: center; gap: var(--spacing-sm); padding: var(--spacing-md); border: 2px solid var(--color-light); border-radius: 8px; cursor: pointer;">💳 Cartão de Crédito</span>
+        </label>
+
+        <label style="flex: 1; cursor: pointer;">
+          <input type="radio" name="payment" value="pix" onclick="showPaymentMethod('pix')">
+          <span style="display: flex; align-items: center; gap: var(--spacing-sm); padding: var(--spacing-md); border: 2px solid var(--color-light); border-radius: 8px; cursor: pointer;">📱 PIX</span>
+        </label>
+
+        <label style="flex: 1; cursor: pointer;">
+          <input type="radio" name="payment" value="boleto" onclick="showPaymentMethod('boleto')">
+          <span style="display: flex; align-items: center; gap: var
